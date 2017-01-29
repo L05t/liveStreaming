@@ -15,6 +15,8 @@
 		13B8E4A51E3E37200041DA06 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13B8E4A31E3E37200041DA06 /* LaunchScreen.storyboard */; };
 		13B8E4B01E3E37200041DA06 /* LiveStreamingDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B8E4AF1E3E37200041DA06 /* LiveStreamingDemoTests.m */; };
 		13B8E4BB1E3E37200041DA06 /* LiveStreamingDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B8E4BA1E3E37200041DA06 /* LiveStreamingDemoUITests.m */; };
+		13B8E4CA1E3E3D8C0041DA06 /* LiveStreamManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B8E4C91E3E3D8C0041DA06 /* LiveStreamManager.m */; };
+		21E20FF54EF8D6AF398506FA /* Pods_LiveStreamingDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BF3DFA25F45BA4635655B13 /* Pods_LiveStreamingDemo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,11 @@
 		13B8E4B61E3E37200041DA06 /* LiveStreamingDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LiveStreamingDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B8E4BA1E3E37200041DA06 /* LiveStreamingDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LiveStreamingDemoUITests.m; sourceTree = "<group>"; };
 		13B8E4BC1E3E37200041DA06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		13B8E4C81E3E3D8C0041DA06 /* LiveStreamManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiveStreamManager.h; sourceTree = "<group>"; };
+		13B8E4C91E3E3D8C0041DA06 /* LiveStreamManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiveStreamManager.m; sourceTree = "<group>"; };
+		1ED3AE64661789A75F925F50 /* Pods-LiveStreamingDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LiveStreamingDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LiveStreamingDemo/Pods-LiveStreamingDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		3BF3DFA25F45BA4635655B13 /* Pods_LiveStreamingDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LiveStreamingDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5D2B43FCB5305A4C49421485 /* Pods-LiveStreamingDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LiveStreamingDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-LiveStreamingDemo/Pods-LiveStreamingDemo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21E20FF54EF8D6AF398506FA /* Pods_LiveStreamingDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +93,8 @@
 				13B8E4AE1E3E37200041DA06 /* LiveStreamingDemoTests */,
 				13B8E4B91E3E37200041DA06 /* LiveStreamingDemoUITests */,
 				13B8E4931E3E37200041DA06 /* Products */,
+				28B17B35049A5B718D45715A /* Pods */,
+				DB99D5ABF59A83A747B56633 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -105,6 +115,8 @@
 				13B8E4991E3E37200041DA06 /* AppDelegate.m */,
 				13B8E49B1E3E37200041DA06 /* ViewController.h */,
 				13B8E49C1E3E37200041DA06 /* ViewController.m */,
+				13B8E4C81E3E3D8C0041DA06 /* LiveStreamManager.h */,
+				13B8E4C91E3E3D8C0041DA06 /* LiveStreamManager.m */,
 				13B8E49E1E3E37200041DA06 /* Main.storyboard */,
 				13B8E4A11E3E37200041DA06 /* Assets.xcassets */,
 				13B8E4A31E3E37200041DA06 /* LaunchScreen.storyboard */,
@@ -140,6 +152,23 @@
 			path = LiveStreamingDemoUITests;
 			sourceTree = "<group>";
 		};
+		28B17B35049A5B718D45715A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1ED3AE64661789A75F925F50 /* Pods-LiveStreamingDemo.debug.xcconfig */,
+				5D2B43FCB5305A4C49421485 /* Pods-LiveStreamingDemo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		DB99D5ABF59A83A747B56633 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3BF3DFA25F45BA4635655B13 /* Pods_LiveStreamingDemo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -147,9 +176,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B8E4BF1E3E37200041DA06 /* Build configuration list for PBXNativeTarget "LiveStreamingDemo" */;
 			buildPhases = (
+				07B98831BD7F9ACA0D3C4A12 /* [CP] Check Pods Manifest.lock */,
 				13B8E48E1E3E37200041DA06 /* Sources */,
 				13B8E48F1E3E37200041DA06 /* Frameworks */,
 				13B8E4901E3E37200041DA06 /* Resources */,
+				7710CAD9921537F88B73ABA3 /* [CP] Embed Pods Frameworks */,
+				091EFCA32084021B155E7399 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -207,6 +239,7 @@
 				TargetAttributes = {
 					13B8E4911E3E37200041DA06 = {
 						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = 6ZM4DE5E9T;
 						ProvisioningStyle = Automatic;
 					};
 					13B8E4AA1E3E37200041DA06 = {
@@ -268,12 +301,61 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		07B98831BD7F9ACA0D3C4A12 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		091EFCA32084021B155E7399 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LiveStreamingDemo/Pods-LiveStreamingDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7710CAD9921537F88B73ABA3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LiveStreamingDemo/Pods-LiveStreamingDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		13B8E48E1E3E37200041DA06 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				13B8E49D1E3E37200041DA06 /* ViewController.m in Sources */,
+				13B8E4CA1E3E3D8C0041DA06 /* LiveStreamManager.m in Sources */,
 				13B8E49A1E3E37200041DA06 /* AppDelegate.m in Sources */,
 				13B8E4971E3E37200041DA06 /* main.m in Sources */,
 			);
@@ -420,9 +502,12 @@
 		};
 		13B8E4C01E3E37200041DA06 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1ED3AE64661789A75F925F50 /* Pods-LiveStreamingDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 6ZM4DE5E9T;
 				INFOPLIST_FILE = LiveStreamingDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = wjc.LiveStreamingDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -431,9 +516,12 @@
 		};
 		13B8E4C11E3E37200041DA06 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5D2B43FCB5305A4C49421485 /* Pods-LiveStreamingDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 6ZM4DE5E9T;
 				INFOPLIST_FILE = LiveStreamingDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = wjc.LiveStreamingDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -505,6 +593,7 @@
 				13B8E4C11E3E37200041DA06 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		13B8E4C21E3E37200041DA06 /* Build configuration list for PBXNativeTarget "LiveStreamingDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -513,6 +602,7 @@
 				13B8E4C41E3E37200041DA06 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		13B8E4C51E3E37200041DA06 /* Build configuration list for PBXNativeTarget "LiveStreamingDemoUITests" */ = {
 			isa = XCConfigurationList;
@@ -521,6 +611,7 @@
 				13B8E4C71E3E37200041DA06 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

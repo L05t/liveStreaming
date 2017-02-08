@@ -14,6 +14,7 @@
 @implementation LiveStreamManager
 
 - (void)initLiveStreamConfig:(successBlock)param{
+    
     self.sessionQueue = dispatch_queue_create("pili.queue.streaming", DISPATCH_QUEUE_SERIAL);
     PLVideoCaptureConfiguration * videoConfig = [PLVideoCaptureConfiguration defaultConfiguration];
     PLAudioCaptureConfiguration * audioConfig = [PLAudioCaptureConfiguration defaultConfiguration];
@@ -76,9 +77,9 @@
 }
 
 // 开始推流
-- (void)startSession {
+- (void)startSession:(NSURL *)streamURL {
     dispatch_async(self.sessionQueue, ^{
-        [self.StreamingSession startStreamingWithPushURL:self.streamURL feedback:^(PLStreamStartStateFeedback feedback) {
+        [self.StreamingSession startStreamingWithPushURL:streamURL feedback:^(PLStreamStartStateFeedback feedback) {
             dispatch_async(dispatch_get_main_queue(), ^{
             });
         }];
@@ -90,6 +91,5 @@
 - (void)setWaterMark:(UIImage *)image position:(CGPoint)position{
     [self.StreamingSession setWaterMarkWithImage:image position:position];
 }
-
 
 @end

@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		133E580F1E4B1B3E00FA33C3 /* HUDUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 133E580E1E4B1B3E00FA33C3 /* HUDUtil.m */; };
+		133E58251E4D671A00FA33C3 /* BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 133E58241E4D671A00FA33C3 /* BaseModel.m */; };
+		133E58281E4D672400FA33C3 /* BaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 133E58271E4D672400FA33C3 /* BaseView.m */; };
+		133E582C1E4D673500FA33C3 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 133E582A1E4D673500FA33C3 /* BaseViewController.m */; };
+		133E582D1E4D673500FA33C3 /* BaseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 133E582B1E4D673500FA33C3 /* BaseViewController.xib */; };
 		13B8E4971E3E37200041DA06 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B8E4961E3E37200041DA06 /* main.m */; };
 		13B8E49A1E3E37200041DA06 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B8E4991E3E37200041DA06 /* AppDelegate.m */; };
 		13B8E49D1E3E37200041DA06 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B8E49C1E3E37200041DA06 /* ViewController.m */; };
@@ -41,6 +45,13 @@
 		133E580D1E4B1B3E00FA33C3 /* HUDUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HUDUtil.h; sourceTree = "<group>"; };
 		133E580E1E4B1B3E00FA33C3 /* HUDUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HUDUtil.m; sourceTree = "<group>"; };
 		133E58101E4D601C00FA33C3 /* ConfigDefin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConfigDefin.h; sourceTree = "<group>"; };
+		133E58231E4D671A00FA33C3 /* BaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseModel.h; sourceTree = "<group>"; };
+		133E58241E4D671A00FA33C3 /* BaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseModel.m; sourceTree = "<group>"; };
+		133E58261E4D672400FA33C3 /* BaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseView.h; sourceTree = "<group>"; };
+		133E58271E4D672400FA33C3 /* BaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseView.m; sourceTree = "<group>"; };
+		133E58291E4D673500FA33C3 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		133E582A1E4D673500FA33C3 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		133E582B1E4D673500FA33C3 /* BaseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BaseViewController.xib; sourceTree = "<group>"; };
 		13B8E4921E3E37200041DA06 /* LiveStreamingDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LiveStreamingDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B8E4961E3E37200041DA06 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		13B8E4981E3E37200041DA06 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -103,6 +114,8 @@
 		133E58111E4D630C00FA33C3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				133E58231E4D671A00FA33C3 /* BaseModel.h */,
+				133E58241E4D671A00FA33C3 /* BaseModel.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -110,6 +123,8 @@
 		133E58121E4D631E00FA33C3 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				133E58261E4D672400FA33C3 /* BaseView.h */,
+				133E58271E4D672400FA33C3 /* BaseView.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -117,6 +132,8 @@
 		133E58131E4D632900FA33C3 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				133E58291E4D673500FA33C3 /* BaseViewController.h */,
+				133E582A1E4D673500FA33C3 /* BaseViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -143,6 +160,7 @@
 		133E58171E4D63A100FA33C3 /* XIB&Storyboard */ = {
 			isa = PBXGroup;
 			children = (
+				133E582B1E4D673500FA33C3 /* BaseViewController.xib */,
 				13B8E4A31E3E37200041DA06 /* LaunchScreen.storyboard */,
 				13B8E49E1E3E37200041DA06 /* Main.storyboard */,
 				13B8E4A11E3E37200041DA06 /* Assets.xcassets */,
@@ -343,6 +361,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				13B8E4A51E3E37200041DA06 /* LaunchScreen.storyboard in Resources */,
+				133E582D1E4D673500FA33C3 /* BaseViewController.xib in Resources */,
 				13B8E4A21E3E37200041DA06 /* Assets.xcassets in Resources */,
 				13B8E4A01E3E37200041DA06 /* Main.storyboard in Resources */,
 			);
@@ -417,7 +436,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				133E58251E4D671A00FA33C3 /* BaseModel.m in Sources */,
+				133E582C1E4D673500FA33C3 /* BaseViewController.m in Sources */,
 				13B8E49D1E3E37200041DA06 /* ViewController.m in Sources */,
+				133E58281E4D672400FA33C3 /* BaseView.m in Sources */,
 				13B8E4CA1E3E3D8C0041DA06 /* LiveStreamManager.m in Sources */,
 				133E580F1E4B1B3E00FA33C3 /* HUDUtil.m in Sources */,
 				13B8E49A1E3E37200041DA06 /* AppDelegate.m in Sources */,

@@ -7,34 +7,65 @@
 //
 
 #import "LiveStreamManager.h"
+#import "HUDUtil.h"
+#import "ConfigDefin.h"
+#define kvideoSizeVertical CGSizeMake(375,667)
+
 @interface LiveStreamManager ()<PLMediaStreamingSessionDelegate>
+
+@property (nonatomic, strong) PLVideoStreamingConfiguration *videoStreamingConfiguration;//设置视频config
 
 @end
 
 @implementation LiveStreamManager
 
 - (void)initLiveStreamConfig:(successBlock)param{
+    DefineWeakSelf(self);
+    //高质量
+    void(^setHiQ)(void) = ^{
+        _videoStreamingConfiguration = [[PLVideoStreamingConfiguration alloc] initWithVideoSize:kvideoSizeVertical expectedSourceVideoFrameRate:30 videoMaxKeyframeInterval:90 averageVideoBitRate:800 * 1000 videoProfileLevel:AVVideoProfileLevelH264Baseline31 videoEncoderType:PLH264EncoderType_VideoToolbox];
+        NSLog(@"%s_%d_| averageVideoBitRate : %d",__FUNCTION__, __LINE__,800);
+    };
     
-    self.sessionQueue = dispatch_queue_create("pili.queue.streaming", DISPATCH_QUEUE_SERIAL);
-    PLVideoCaptureConfiguration * videoConfig = [PLVideoCaptureConfiguration defaultConfiguration];
-    PLAudioCaptureConfiguration * audioConfig = [PLAudioCaptureConfiguration defaultConfiguration];
-    PLVideoStreamingConfiguration * videoStreamingConfig = [PLVideoStreamingConfiguration defaultConfiguration];
-    PLAudioStreamingConfiguration * audioStreamingConfig = [PLAudioStreamingConfiguration defaultConfiguration];
-    PLStream * stream = [[PLStream alloc] init];//一般设置为nil
+    //中质量
+    void(^setMidQ)(void) = ^{
+        _videoStreamingConfiguration = [[PLVideoStreamingConfiguration alloc] initWithVideoSize:kvideoSizeVertical expectedSourceVideoFrameRate:30 videoMaxKeyframeInterval:90 averageVideoBitRate:600 * 1000 videoProfileLevel:AVVideoProfileLevelH264Baseline31 videoEncoderType:PLH264EncoderType_VideoToolbox];
+        NSLog(@"%s_%d_| averageVideoBitRate : %d",__FUNCTION__, __LINE__,600);
+    };
     
-    self.StreamingSession = [[PLMediaStreamingSession alloc] initWithVideoCaptureConfiguration:videoConfig audioCaptureConfiguration:audioConfig videoStreamingConfiguration:videoStreamingConfig audioStreamingConfiguration:audioStreamingConfig stream:nil];
-    self.StreamingSession.videoOrientation =(AVCaptureVideoOrientation)AVCaptureVideoOrientationLandscapeRight;
-    self.StreamingSession.delegate = self;
-    
+    //低质量
+    void(^setLowQ)(void) = ^{
+        _videoStreamingConfiguration = [[PLVideoStreamingConfiguration alloc] initWithVideoSize:kvideoSizeVertical expectedSourceVideoFrameRate:30 videoMaxKeyframeInterval:90 averageVideoBitRate:400 * 1000 videoProfileLevel:AVVideoProfileLevelH264Baseline31 videoEncoderType:PLH264EncoderType_VideoToolbox];
+        NSLog(@"%s_%d_| averageVideoBitRate : %d",__FUNCTION__, __LINE__,400);
+    };
+
+    void(^defaultQ)(void) = ^{
+        weakSelf.videoStreamingConfiguration = [PLVideoStreamingConfiguration defaultConfiguration];
+    };
     // 摄像头权限
     void(^permissionBlock)(void) = ^{
-        dispatch_async(self.sessionQueue, ^{
-            
-        });
+        weakSelf.sessionQueue = dispatch_queue_create("pili.queue.streaming", DISPATCH_QUEUE_SERIAL);
+        PLVideoCaptureConfiguration * videoConfig = [PLVideoCaptureConfiguration defaultConfiguration];
+        PLAudioCaptureConfiguration * audioConfig = [PLAudioCaptureConfiguration defaultConfiguration];
+        PLAudioStreamingConfiguration * audioStreamingConfig = [PLAudioStreamingConfiguration defaultConfiguration];
+        PLStream * stream = [[PLStream alloc] init];//一般设置为nil
+        if (weakSelf.streamType == LowQ) {
+            setLowQ();
+        }else if(weakSelf.streamType == MidQ){
+            setMidQ();
+        }else if(weakSelf.streamType == HiQ){
+            setHiQ();
+        }else{
+            defaultQ();
+        }
+        
+        weakSelf.StreamingSession = [[PLMediaStreamingSession alloc] initWithVideoCaptureConfiguration:videoConfig audioCaptureConfiguration:audioConfig videoStreamingConfiguration:_videoStreamingConfiguration audioStreamingConfiguration:audioStreamingConfig stream:nil];
+        weakSelf.StreamingSession.videoOrientation =(AVCaptureVideoOrientation)AVCaptureVideoOrientationLandscapeRight;
+        weakSelf.StreamingSession.delegate = self;
     };
     // 没有权限
     void (^noAccessBlock)(void) = ^{
-        
+        [HUDUtil showError:@"没获得摄像头或者麦克风的使用权限!请打开权限再使用"];
     };
 
     /**
@@ -74,12 +105,15 @@
             
             break;
     }
+    
+
 }
 
 // 开始推流
 - (void)startSession:(NSURL *)streamURL {
+    DefineWeakSelf(self);
     dispatch_async(self.sessionQueue, ^{
-        [self.StreamingSession startStreamingWithPushURL:streamURL feedback:^(PLStreamStartStateFeedback feedback) {
+        [weakSelf.StreamingSession startStreamingWithPushURL:streamURL feedback:^(PLStreamStartStateFeedback feedback) {
             dispatch_async(dispatch_get_main_queue(), ^{
             });
         }];
@@ -91,5 +125,7 @@
 - (void)setWaterMark:(UIImage *)image position:(CGPoint)position{
     [self.StreamingSession setWaterMarkWithImage:image position:position];
 }
+
+
 
 @end

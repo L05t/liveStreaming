@@ -29,6 +29,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SVProgressHUD.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>pili-librtmp.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -37,12 +42,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>3C58D987FDFE4E5683C2B55BC9FF433E</key>
+		<key>1D25226804D51117D532D7DFFEB06C9B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7B14E5DFB52743687F65FAB1A77D8541</key>
+		<key>52691851BC76A408FB7FF99C66CA4646</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>88FC5004A231A3727D3D325AD584F3CE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -57,12 +67,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D8445EC948AE06DF43884EBE03A340B2</key>
+		<key>D848C2A94B4905952B543DEECE308D13</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D848C2A94B4905952B543DEECE308D13</key>
+		<key>EC569F64915B646F7641ECBCC87B2ABE</key>
 		<dict>
 			<key>primary</key>
 			<true/>

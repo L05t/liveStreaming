@@ -56,12 +56,14 @@ PODS:
   - SDWebImage (3.7.6):
     - SDWebImage/Core (= 3.7.6)
   - SDWebImage/Core (3.7.6)
+  - SVProgressHUD (2.1.2)
 
 DEPENDENCIES:
   - AFNetworking (~> 3.1.0)
   - PLMediaStreamingKit (~> 2.1.6)
   - PLPlayerKit (~> 2.4.0)
   - SDWebImage (~> 3.7.6)
+  - SVProgressHUD (~> 2.1.2)
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
@@ -71,7 +73,8 @@ SPEC CHECKSUMS:
   PLPlayerKit: 4604f650b4f446d98f6880db27924405093a112b
   QNNetDiag: 90727185d3cdd4f62f92b7f9b7d586451cf745d1
   SDWebImage: c325cf02c30337336b95beff20a13df489ec0ec9
+  SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
 
-PODFILE CHECKSUM: 5fc004f4438273fd6de575bc94032e68ab116df1
+PODFILE CHECKSUM: abda0d18394842d7092953e7dc7f446d50d316f0
 
 COCOAPODS: 1.2.0.beta.1

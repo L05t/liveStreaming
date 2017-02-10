@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'D8445EC948AE06DF43884EBE03A340B2'
+               BlueprintIdentifier = '88FC5004A231A3727D3D325AD584F3CE'
                BlueprintName = 'QNNetDiag'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'QNNetDiag.framework'>
